@@ -1,0 +1,151 @@
+/* General Body and Layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Splash Screen Styles */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.splash-content {
+    animation: fadeIn 2s ease;
+}
+
+#splash-screen h1 {
+    font-size: 5em;
+    margin-bottom: 0.2em;
+    font-weight: normal;
+}
+
+#splash-screen p {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+#start-btn {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#start-btn:hover {
+    background: white;
+    color: #000;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* This is the overlay to make text readable */
+.content-container {
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+#line-audio {
+    display: none;
+}
+
+#poem-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: normal;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#poem-line-container {
+    min-height: 100px;
+    margin-bottom: 30px;
+}
+
+#poem-line {
+    font-size: 1.8em;
+    line-height: 1.5;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Controls and Navigation */
+.controls-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px; /* Adjust this value for a subtle change */
+}
+
+#line-counter {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#prev-btn, #next-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#prev-btn:disabled, #next-btn:disabled {
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}

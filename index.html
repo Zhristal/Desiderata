@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desiderata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1>Desiderata</h1>
+            <p>A poem by Max Ehrmann</p>
+            <button id="start-btn">Begin Journey</button>
+        </div>
+    </div>
+    
+    <div class="content-container">
+        <h1 id="poem-title">Desiderata</h1>
+        <div id="poem-line-container" class="fade-in">
+            <p id="poem-line"></p>
+        </div>
+        
+        <div class="controls-container">
+            <div id="line-counter"></div>
+            <div class="navigation-buttons">
+                <button id="prev-btn">Previous</button>
+                <button id="next-btn">Next</button>
+            </div>
+        </div>
+        
+        <audio id="line-audio"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
